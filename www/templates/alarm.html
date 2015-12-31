@@ -7,7 +7,7 @@
   </ion-header-bar>
   <ion-content>
     <form ng-submit="saveData()">
-      <div class="list list-inset">
+      <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">Name</span>
           <input type="text" ng-model="currentAlarm.name" placeholder="Name">
@@ -16,6 +16,25 @@
           <span class="input-label">YYYY/MM/DD HH:MM</span>
           <input type="text" ng-model="currentAlarm.time" placeholder="YYYY/MM/DD HH:MM">
         </label>
+        <div class="item">
+          <span class="input-label">Snooze: </span>
+          <div class="badge badge-clear">
+            <label class="toggle toggle-positive">
+              <input type="checkbox" ng-model="currentAlarm.snooze">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="item" ng-show="currentAlarm.snooze">
+          <span class="input-label">Snooze Time: </span>
+          <ion-list>
+            <ion-radio ng-model="currentAlarm.snoozeTime" ng-value="10">10 Minutes</ion-radio>
+            <ion-radio ng-model="currentAlarm.snoozeTime" ng-value="20">20 Minutes</ion-radio>
+            <ion-radio ng-model="currentAlarm.snoozeTime" ng-value="30">30 Minutes</ion-radio>
+          </ion-list>
+        </div>
         <button class="button button-block button-positive" type="submit">Save</button>
       </div>
     </form>
