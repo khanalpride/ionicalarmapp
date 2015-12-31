@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Set Alarm</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="saveData()">
+      <div class="list list-inset">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Name</span>
+          <input type="text" ng-model="currentAlarm.name" placeholder="Name">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">YYYY/MM/DD HH:MM</span>
+          <input type="text" ng-model="currentAlarm.time" placeholder="YYYY/MM/DD HH:MM">
+        </label>
+        <button class="button button-block button-positive" type="submit">Save</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
